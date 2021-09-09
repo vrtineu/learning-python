@@ -319,3 +319,95 @@ for p in galera:
         print(f'{p[0]} é menor de idade.')
         totmen += 1
 print(f'Temos {totmai} maiores e {totmen} menores de idade.')
+
+-----------------------------------
+
+#### DICIONARIOS
+
+São identificados por {}.
+Posso declarar como:
+
+dados = {} ou dados = dict()
+
+dados = {'nome': 'Pedro', 'idade': 25}
+print(dados['nome']) # que retorna Pedro
+print(dados['idade']) # que retorna 25
+
+append não funciona em dicionarios.
+
+Para criar um novo elemeento em um dicionário usa-se:
+dados['sexo'] = 'M'
+
+Para remover elementos em dicionarios usa-se o comando:
+
+del dados['idade']
+-
+
+filme = {
+    'titulo': 'Star Wars',
+    'ano': 1977,
+    'diretor': 'George Lucas'
+}
+Em python, cada elemento(título, ano e diretor) dentro do dicionário é chamado de chaves (keys)
+
+Existe diferenças entre valores, chaves e itens:
+valor
+print(filme.values()) #Retornaria 'Star Wars', 1977, 'George Lucas'
+
+chaves
+print(filme.keys()) #Retornaria 'titulo', 'ano', 'diretor'
+
+item
+print(filme.items()) #Retorna os dois, tanto values quanto keys.
+-
+
+for k, v in filme.items():
+    print(f'O {k} é {v}.') #O titulo é Star Wars. #O ano é 1977. #O diretor é George Lucas.
+-
+
+locadora = [{
+        'titulo': 'Star Wars',
+        'ano': 1977,
+        'diretor': 'George Lucas'
+        },
+        {
+        'titulo': 'Avengers',
+        'ano': 2012,
+        'diretor': 'Joss Whedom'
+        },
+        {
+        'titulo': 'Matrix',
+        'ano': 1999,
+        'diretor': 'Wachowski'
+        }]
+
+print(locadora[0]['ano']) #1977
+print(locadora[2]['titulo']) #Matrix
+--------------------------------
+
+brasil = []
+estado1 = {
+    'uf': 'Rio de Janeiro', 'sigla': 'RJ'
+}
+estado2 = {
+    'uf': 'São Paulo', 'sigla': 'SP'
+}
+brasil.append(estado1)
+brasil.append(estado2)
+
+print(brasil)
+
+-----------------------
+
+EM DICIONARIOS NÃO É POSSÍVEL FAZER UMA "CÓPIA" DA LISTA USANDO [:], PARA ISSO TEM QUE SER USANDO UM MÉTODO, CHAMADO COPY. 
+Ex: estado.copy()
+
+brasil = list()
+estado = dict()
+
+for c in range(0, 3):
+    estado['uf'] = str(input('Unidade Federativa: '))
+    estado['sigla'] = str(input('Sigla: '))
+    brasil.append(estado.copy())
+print(brasil)
+# [{'uf': 'Minas', 'sigla': 'MG'}, {'uf': 'Acre', 'sigla': 'AC'}, {'uf': 'Goias', 'sigla': 'GO'}]
